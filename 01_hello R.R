@@ -11,7 +11,7 @@ print(str)
 str1 <- "Hello"
 str2 <- "R"
 
-cat(str1,str2,"_cat()")
+cat(str1,str2,"_cat()") # 연결해서 출력
 
 
 # 데이터 유형 
