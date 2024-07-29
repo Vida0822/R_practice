@@ -14,3 +14,16 @@ cor(a,b) # Correlation
 cor.test(a,b,method="pearson") 
 # Pearson Correlation Analysis : Continuous Variable 
 #   vs Spearman : Based on order 
+
+# ====================================================
+# Pearson's product-moment correlation
+# 
+# data:  a and b
+# t = -6.7424, df = 30, p-value = 1.788e-07
+# alternative hypothesis: true correlation is not equal to 0
+# 95 percent confidence interval:
+#  -0.8852686 -0.5860994
+# sample estimates:
+#        cor 
+# -0.7761684
+# ====================================================
