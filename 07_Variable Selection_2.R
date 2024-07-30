@@ -6,8 +6,8 @@
 # => Step 함수 활용해서! 
 
 step(lm(y ~ 1, data=df), scope=list(lower=~1, upper=~x1+x2+x3+x4), direction="forward")
-# step(lm(출력변수~입력변수, 데이터 세트)
-# ,scope = list(lower=가장작은모형, upper=가장 큰 모형, direction = "forward"/"backward"/"stepwise"))
+# param 1 : lm(model) / param 2 : scope(upper,lower,direction) / param 3 : method 
+# step(lm(출력변수~입력변수, 데이터 세트) ,scope = list(lower=가장작은모형, upper=가장 큰 모형, direction = "forward"/"backward"/"stepwise"))
 # k=2:AIC, k=log(자료의 수)
 
 # Start:  AIC=77.45
