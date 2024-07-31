@@ -7,11 +7,9 @@
 # 1) Read Data and visualize
 # 패키지 설치 (필요한 경우에만)
 install.packages("tseries")
-install.packages("forecast")
 install.packages("TTR")
 
 library(tseries) # various functions for analysis of time series data 
-library(forecast) #  various functions for prediction of time series data 
 library(TTR) # utils 
 
 # 영국 왕 42명의 사망시 나이 (비계절성을 띄는 불규칙 요소 ) --> 불규칙 요소 제거해야함 
