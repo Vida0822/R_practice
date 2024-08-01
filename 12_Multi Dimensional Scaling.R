@@ -23,9 +23,11 @@ head(swiss)
 #   : "어느정도 교육 수준 점수가 비슷해야 유사한 집단으로 보는거야?"
 
 # 거리 행렬로 변환 
-swiss.x <- as.matrix(swiss[,-1]) # 첫 번째 열을 제외한 나머지 열 --> 행렬로 변환 
-swiss.dist <- dist(swiss.x) # 데이터의 각 행 간의 유클리드 거리 계산 --> 거리 행렬 생성
-swiss.mds <- isoMDS(swiss.dist) # 다차원 척도법을 수행 : 고차원 데이터 축소해 2차원 좌표 
+swiss.x <- as.matrix(swiss[,-1]) # 첫 번째 열을 제외한 나머지 열 --> 데이터 프레임 행렬로 변환 
+swiss.dist <- dist(swiss.x) # 데이터의 각 행 간의 유클리드 거리 계산 --> '거리 행렬' 생성
+
+# 축소 
+swiss.mds <- isoMDS(swiss.dist) # 다차원 척도법을 수행 : 고차원 데이터 2차원 좌표로
 
 # 시각화 
 plot(swiss.mds$points, type="n") # points : 거리행렬의 '좌표정보' ([{x,y}, ...])
@@ -34,7 +36,11 @@ abline(v=0,h=0, lty=2, lwd=0.5)
 
 
 
-
-
+# 2) Sammon 
+swiss.x <- as.matrix(swiss[,-1])
+swiss.sammon <- sammon(dist(swiss.x))  # vs isoMDS(swiss.dist)
+plot(swiss.sammon$points, type="n")
+text(swiss.sammon$points, labels=as.character(1:nrow(swiss.x)))
+abline(v=0,h=0,lty=2,lwd=0.5)
 
 
